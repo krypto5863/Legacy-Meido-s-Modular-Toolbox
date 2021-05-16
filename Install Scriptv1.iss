@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Legacy Meido's Modular Toolbox"
-#define MyAppVersion "1.1.0"
+#define MyAppVersion "1.2.2"
 #define MyAppPublisher "Nobody"
 #define MyAppURL "http://www.tesin.com/"
 #define MyAppExeName "Legacy Meido's Modular Toolbox"
@@ -34,7 +34,7 @@ InfoBeforeFile=Documentation\info.txt
 PrivilegesRequired=admin
 PrivilegesRequiredOverridesAllowed=commandline
 OutputDir=Compiled EXE
-OutputBaseFilename=Legacy Meido's Modular Toolbox 1.1.0
+OutputBaseFilename=Legacy Meido's Modular Toolbox {#MyAppVersion}
 DefaultDirName=Legacy Meido's Modular Toolbox
 AppendDefaultDirName=no
 Compression=lzma
@@ -85,24 +85,25 @@ Name:"none"; Description: "I want nothing!";
 
 [Components]
 Name: Loader; Description: Mod Loader (Required for just about everything); Types: full compact;
-    Name: Loader/bepinEX; Description: BepInEX(Now Recommended!); Types: full compact pic self hen; Flags:Exclusive checkablealone
+
+    Name: Loader/bepinEX; Description: BepInEX(Read the Readme on this!); Flags:Exclusive checkablealone
       Name: Loader/bepinEX/x64; Description: x64; Flags:Exclusive checkablealone
       Name: Loader/bepinEX/x86; Description: x86; Flags:Exclusive checkablealone
 
     Name: Loader/bepinEX/Translations; Description: Translation Plugins; Flags: dontinheritcheck;
       Name: Loader/bepinEX/Translations/resredir; Description: Resource Redirector; Flags: dontinheritcheck;
-        Name: Loader/bepinEX/Translations/resredir/xuat; Description: XUnity AutoTranslator; Types: full compact pic self hen;  Flags: dontinheritcheck;
+        Name: Loader/bepinEX/Translations/resredir/xuat; Description: XUnity AutoTranslator;  Flags: dontinheritcheck;
 
     Name: Loader/bepinEX/scriptloader; Description: ScriptLoader;
-      Name: Loader/bepinEX/scriptloader/modpriority; Description: ModPriority Script; Types: full compact pic self hen;
-      Name: Loader/bepinEX/scriptloader/wrapmode; Description: WrapModeExtend Script; Types: full pic self; Flags: dontinheritcheck;
+      Name: Loader/bepinEX/scriptloader/modpriority; Description: ModPriority Script;
+      Name: Loader/bepinEX/scriptloader/wrapmode; Description: WrapModeExtend Script; Flags: dontinheritcheck;
 
-  Name: Loader/Sybaris; Description: Sybaris; Flags: Exclusive checkablealone
-    Name: Loader/Sybaris/x64; Description: x64; Flags: Exclusive
-    Name: Loader/Sybaris/x86; Description: x86; Flags: Exclusive
+    Name: Loader/Sybaris; Description: Sybaris; Types: full compact pic self hen;  Flags: Exclusive checkablealone
+      Name: Loader/Sybaris/x64; Description: x64; Flags: Exclusive
+      Name: Loader/Sybaris/x86; Description: x86; Flags: Exclusive
 
     Name: Loader/Sybaris/Translations; Description: Translation Plugins; Flags: dontinheritcheck
-      Name: Loader/Sybaris/Translations/xuat; Description: XUnity AutoTranslator;
+      Name: Loader/Sybaris/Translations/xuat; Types: full compact pic self hen; Description: XUnity AutoTranslator;
 
 
 Name: Patchers; Description: Patchers; types: full compact  pic self hen;
@@ -115,13 +116,13 @@ Name: Patchers; Description: Patchers; types: full compact  pic self hen;
   ;Name: Patchers/BodyParam; Description: BodyParamChanger; types:;
   Name: Patchers/COMShader; Description: COM3d2ShaderFix; types: full self compact pic hen;
   Name: Patchers/CUFix; Description: CUSaveFix; types: full self compact pic hen;
-  Name: Patchers/EditUtil; Description: EditMenuUtility; types: full self compact pic hen;
-  Name: Patchers/extsave; Description: External Save; Types: Full self pic hen; Flags: checkablealone;
-    Name: Patchers/extsave/maidvoice; Description: MaidVoicePitch; Types: full self pic  hen; Flags: checkablealone;
+  Name: Patchers/EditUtil; Description: EditMenuUtility; types: full self pic hen;
+  Name: Patchers/extsave; Description: External Save; Types: Full compact self pic hen; Flags: checkablealone;
+    Name: Patchers/extsave/maidvoice; Description: MaidVoicePitch; Types: full compact self pic  hen; Flags: checkablealone;
       Name: Patchers/extsave/maidvoice/addmod; Description: AddModSlider; Types: full self pic  hen; Flags: checkablealone;
         Name: Patchers/extsave/maidvoice/addmod/distort; Description: DistortCorrect; Types:full self pic  hen; Flags: checkablealone;
   Name: Patchers/facetype; Description: FaceTypePatcher; Types:full compact self pic  hen;
-  Name: Patchers/fastfade; Description: Fast Fade; Types: full compact self pic  hen;
+  Name: Patchers/fastfade; Description: Fast Fade; Types: self pic;
   ;Name: Patchers/HitImprov; Description: HitCheckImprove; Types: full compact self pic hen;
   Name: Patchers/namext; Description: Name Extender; Types: full compact self pic  hen;
   Name: Patchers/neighuncen; Description: NeighUncensor; Types: full compact self pic  hen;
@@ -133,7 +134,7 @@ Name: plugins; Description: Unityinjector Plugins; Types: full compact;
   Name: plugins/addyot; Description: AddYotogiSlider; Types: Full hen self;
   Name: plugins/accex; Description: AlwaysColorChangeEX; Types: full self pic  hen;
   Name: plugins/cameracon; Description:CameraControlEx; Types:full pic self;
-  Name: plugins/camerautil; Description: CameraUtility; Types: Full pic self  hen;
+  Name: plugins/camerautil; Description: CameraUtility; Types: ;
   Name: plugins/colorhelp; Description: ColorPaletteHelper; Types:full self pic  hen;
   Name: plugins/conwindow; Description:ConsistentWindowPosition; Types:full self pic  hen;
   Name: plugins/nyou; Description:CustomNyou(Why...);
@@ -165,7 +166,7 @@ Name: plugins; Description: Unityinjector Plugins; Types: full compact;
   Name: plugins/scenecap; Description:SceneCapture; Types:full pic self; Flags: checkablealone;
   Name: plugins/seieki; Description:Seieki Plugin; Types:;
   Name: plugins/shaderchange; Description:ShaderChange; Types:full pic self ;
-  Name: plugins/shapeanimator; Description:ShapeAnimator; Types:full pic self hen;
+  Name: plugins/shapeanimator; Description:ShapeAnimator; Types:full compact pic self hen;
   Name: plugins/skillcomshort; Description:SkillCommandShortcut; Types:full hen;
   Name: plugins/slimeshade; Description:SlimeShader; Types:;
   Name: plugins/toukaScreen; Description:Touka Screenshot; Types:full pic self ;
@@ -266,6 +267,7 @@ Source: "Xuat\Syb\*"; DestDir: "{app}"; Components: Loader/Sybaris/Translations/
 Source: "ScriptLoader\*"; DestDir: "{app}\{#bepin}\plugins"; Components: Loader/bepinEX/scriptloader; Flags: ignoreversion recursesubdirs createallsubdirs
 
 Source: "Scripts\wrapmode\*"; DestDir: "{app}\{#scripts}"; Components: Loader/bepinEX/scriptloader/wrapmode; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "Scripts\modpriority\*"; DestDir: "{app}\{#scripts}"; Components: Loader/bepinEX/scriptloader/modpriority; Flags: ignoreversion recursesubdirs createallsubdirs
 
 
 ;Patchers
@@ -517,6 +519,16 @@ begin
         case CurStep of
       ssPostInstall:
       begin
+
+        If DirExists(path + '\Mod') = false then
+        begin
+          CreateDir(path+'\Mod');
+        end;
+
+        If DirExists(path + '\Sybaris\GameData') = false then
+        begin
+          CreateDir(path+'\Sybaris\GameData');
+        end;
 
         if WizardForm.TasksList.Checked[11] then
         begin
