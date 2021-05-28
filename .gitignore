@@ -1,25 +1,4 @@
 #Ignored Files
-*.zip
-Bep
-Sybaris
-LMMT DLs
-DLL
-ResourceRedirector
-ScriptLoader
-Translation Files
-Xuat
-YAT
-Scripts
-*.txt
-
-Compiled EXE
-Documentation
-Loader
-Misc
-Old
-Patchers
-Plugins
-UI
+Compiled_EXE
 Utility/7zip
 Utility/DLL
-*.docx
