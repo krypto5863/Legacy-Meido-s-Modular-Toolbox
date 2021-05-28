@@ -1,7 +1,7 @@
 # Legacy-Meido-s-Modular-Toolbox
 The little brother of CMI, an AIO installer for CM3D2
 
-The latest release can always be found at the following link: https://drive.google.com/file/d/124jRc0JXcao8WWtq1blTcYLEFY4z1vf8/view?usp=sharing
+The latest release can always be found here!
 
 Welcome to the Legacy Meido’s Modular Toolbox (for CM3D2)!
 
